@@ -47,7 +47,7 @@ public class TestePersistirAeroporto {
             //voos.add(em.find(Voo.class, 1));
            // c.setId(2);
             c.setNome("Aeroporto Passo Fundo");
-            c.setPais("brasil");
+            c.setOperacional(true);
             c.setCidade(em.find(Cidade.class, 2));
             //.setVoos(voos);
             em.getTransaction().begin();

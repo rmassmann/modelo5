@@ -42,14 +42,10 @@ public class Aeroporto implements Serializable{
     @NotBlank(message = "O nome não pode ser em branco")
     @Column(name = "nome", length = 50, nullable = false)
     private String nome;
-    @Length(max = 50, message = "O país não pode ter mais que {max} caracteres")
-    @NotNull(message = "O país deve ser informado")
-    @NotBlank(message = "O país não pode ser em branco")
-    @Column(name = "pais", length = 50, nullable = false)
-    private String pais;
-    @NotNull(message = "A Cidade deve ser informado")
-    @ManyToOne
-    @JoinColumn(name = "cidadek_id", referencedColumnName = "id", nullable = false)
+    @NotNull(message = "Operacional não pode ser nulo")
+    @Column(name = "operacional", nullable = false)
+    private Boolean operacional;
+    
     private Cidade cidade;
     @ManyToMany
     @JoinTable(name = "escalas",
@@ -65,7 +61,7 @@ public class Aeroporto implements Serializable{
     public Integer getId() {
         return id;
     }
-
+    
     public void setId(Integer id) {
         this.id = id;
     }
@@ -78,13 +74,6 @@ public class Aeroporto implements Serializable{
         this.nome = nome;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
 
     public Cidade getCidade() {
         return cidade;
@@ -125,6 +114,14 @@ public class Aeroporto implements Serializable{
 
     public void setVoos(List<Voo> voos) {
         this.voos = voos;
+    }
+
+    public Boolean getOperacional() {
+        return operacional;
+    }
+
+    public void setOperacional(Boolean operacional) {
+        this.operacional = operacional;
     }
     
     

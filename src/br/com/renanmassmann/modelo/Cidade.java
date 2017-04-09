@@ -31,12 +31,18 @@ public class Cidade implements Serializable {
     @NotBlank(message = "O nome não pode ser em branco")
     @Column(name = "nome", length = 50, nullable = false)    
     private String nome;
+    @Length(max = 30, message = "O país não pode ter mais que {max} caracteres")
+    @NotNull(message = "O país deve ser informado")
+    @NotBlank(message = "O país não pode ser em branco")
+    @Column(name = "pais", length = 50, nullable = false)
+    private String pais;
+    
     
     
     public Cidade(){
         
     }
-
+    
     public Integer getId() {
         return id;
     }
@@ -76,6 +82,14 @@ public class Cidade implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
     
     

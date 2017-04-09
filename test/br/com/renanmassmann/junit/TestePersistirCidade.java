@@ -40,6 +40,7 @@ public class TestePersistirCidade {
         try {
             Cidade c = new Cidade();
            c.setNome("Canoas");
+           c.setPais("Brasil");
           
             em.getTransaction().begin();
             em.persist(c);
