@@ -39,7 +39,7 @@ public class TestePersistirCidade {
         boolean exception = false;
         try {
             Cidade c = new Cidade();
-           c.setNome("Canoas");
+           c.setNome("Cafffoas");
            c.setPais("Brasil");
           
             em.getTransaction().begin();

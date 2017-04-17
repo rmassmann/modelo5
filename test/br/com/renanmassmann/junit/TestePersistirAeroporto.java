@@ -46,9 +46,9 @@ public class TestePersistirAeroporto {
             //List<Voo> voos = new ArrayList<>();
             //voos.add(em.find(Voo.class, 1));
            // c.setId(2);
-            c.setNome("Aeroporto Passo Fundo");
+            c.setNome("Aeroporto rio");
             c.setOperacional(true);
-            c.setCidade(em.find(Cidade.class, 2));
+            c.setCidade(em.find(Cidade.class, 1));
             //.setVoos(voos);
             em.getTransaction().begin();
             em.persist(c);

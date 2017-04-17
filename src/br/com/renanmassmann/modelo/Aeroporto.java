@@ -21,6 +21,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.ForeignKey;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -45,7 +46,10 @@ public class Aeroporto implements Serializable{
     @NotNull(message = "Operacional não pode ser nulo")
     @Column(name = "operacional", nullable = false)
     private Boolean operacional;
-    
+    @NotNull(message = "A cidade deve ser informada")
+    @ManyToOne
+    @JoinColumn(name = "cidade", referencedColumnName = "id",nullable = false)
+    @ForeignKey(name = "fk_cidade_id")
     private Cidade cidade;
     @ManyToMany
     @JoinTable(name = "escalas",
