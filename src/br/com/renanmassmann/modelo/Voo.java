@@ -75,9 +75,10 @@ public class Voo implements Serializable{
         this.voosAgendados.add(obj);
     }
     
-    public void removerTelefone(int index){
+    public void removerVooAgendado(int index){
         this.voosAgendados.remove(index);
     }
+    
 
     public String getDescricao() {
         return Descricao;
